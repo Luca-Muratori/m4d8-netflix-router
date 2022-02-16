@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./styles/styles.css";
+import HomePage from './compenents/HomePage'
 import { Container, Alert, Dropdown } from "react-bootstrap";
 import MyNavbar from "./components/MyNavbar";
 import MyFooter from "./components/MyFooter";
