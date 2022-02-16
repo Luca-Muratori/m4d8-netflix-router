@@ -3,7 +3,7 @@ import { Row, Spinner } from "react-bootstrap";
 import SingleMovie from "./SingleMovie";
 
 class MovieList extends Component {
-  OMDB_URL = "http://www.omdbapi.com/?apikey=24ad60e9";
+  omd_omd_URL = "http://www.omdbapi.com/?apikey=a0d093ea";
 
   state = {
     searchResults: [],
@@ -13,7 +13,7 @@ class MovieList extends Component {
   fetchSearchResult = async () => {
     try {
       const response = await fetch(
-        this.OMDB_URL + "&s=" + this.props.searchString
+        this.omd_URL + "&s=" + this.props.searchString
       );
       if (response.ok) {
         const data = await response.json();

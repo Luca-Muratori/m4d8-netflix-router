@@ -6,13 +6,17 @@ import MovieDetails from './components/MovieDetails'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 const App =()=> {
-  <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<HomePage/>}/>
-      {/* <Route path='/tv-show' element={<TvShow/>}/> */}
-      <Route path='/details/:movieID' element ={<MovieDetails/>}/>
-    </Routes>
-  </BrowserRouter>
+  return(
+    <div className=''>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage/>}/>
+          {/* <Route path='/tv-show' element={<TvShow/>}/> */}
+          <Route path='/details/:movieID' element ={<MovieDetails/>}/>
+        </Routes>
+      </BrowserRouter>
+    </div>
+    )
 }
 
 export default App;

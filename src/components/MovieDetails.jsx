@@ -7,13 +7,15 @@ const MovieDetails=()=>{
     const [details, setDetails]= useState(null)
     const [comments, setComments]=useState([])
 
-    const params=useParams() //params give an object that contain a property called like your parameter name(parames.elementId)
+    const params=useParams() //params give an object that contain a property called like your parameter name(params.elementId)
+    console.log(params)
     useEffect(()=>{
         const fetchDetails=async ()=>{
             try{
-                let response=await fetch("http://www.omdbapi.com/?apikey=a0d093ea="+params.movieID)
+                let response=await fetch("http://www.omdbapi.com/?apikey=a0d093ea&"+params.movieID)
                 if (response.ok){
                     let data=await response.json()
+                    console.log(data)
                     setDetails(data)
                 }else{
                     console.log('error')

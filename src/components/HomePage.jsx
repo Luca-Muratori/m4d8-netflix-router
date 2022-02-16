@@ -16,7 +16,7 @@ class HomePage extends Component {
     selectedMovie: null,
   };
 
-  OMDB_URL = "https://www.omdbapi.com/?apikey=a0d093ea";
+  URL = "https://www.omdbapi.com/?apikey=a0d093ea";
 
   componentDidMount = () => {
     this.fetchMovies();
@@ -24,7 +24,7 @@ class HomePage extends Component {
 
   fetchMovies = () => {
     Promise.all([
-      fetch(this.OMDB_URL + "&s=harry%20potter")
+      fetch(this.URL + "&s=harry%20potter")
         .then((response) => response.json())
         .then((responseObject) => {
           if (responseObject.Response === "True") {
@@ -33,7 +33,7 @@ class HomePage extends Component {
             this.setState({ error: true });
           }
         }),
-      fetch(this.OMDB_URL + "&s=avengers")
+      fetch(this.URL + "&s=avengers")
         .then((response) => response.json())
         .then((responseObject) => {
           if (responseObject.Response === "True") {
@@ -42,7 +42,7 @@ class HomePage extends Component {
             this.setState({ error: true });
           }
         }),
-      fetch(this.OMDB_URL + "&s=star%20wars")
+      fetch(this.URL + "&s=star%20wars")
         .then((response) => response.json())
         .then((responseObject) => {
           if (responseObject.Response === "True") {
