@@ -17,6 +17,7 @@ const MovieDetails=()=>{
                     let data=await response.json()
                     console.log(data)
                     setDetails(data)
+                    console.log(details)
                 }else{
                     console.log('error')
                 }

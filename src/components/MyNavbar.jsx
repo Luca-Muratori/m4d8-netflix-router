@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Navbar, Nav, InputGroup, FormControl } from "react-bootstrap";
 import { useLocation, Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 const MyNavbar = ({ showSearchResult }) => {
   const [searchString, setSearchString] = useState("");
   const location = useLocation();
+   const navigate = useNavigate()
 
   const searchStringHandler = (e) => {
     if (e.keyCode === 13) {
@@ -40,11 +42,12 @@ const MyNavbar = ({ showSearchResult }) => {
             </div>
           </Link>
           <Link to="/tv-shows">
-            <div
+            <div 
               className={
                 "nav-link font-weight-bold" +
                 (location.pathname === "/tv-shows" ? " active" : "")
               }
+              onClick={() => navigate("/tv-shows/")}
             >
               TV Shows
             </div>

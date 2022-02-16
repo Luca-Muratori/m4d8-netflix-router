@@ -113,11 +113,6 @@ const MyFooter = () => (
             </button>
           </Col>
         </Row>
-        <Row>
-          <Col xs={12} className="text-left mb-2 mt-2 copyright">
-            © 1997-{new Date().getFullYear()} Netflix, Inc.
-          </Col>
-        </Row>
       </Col>
     </Row>
   </footer>
