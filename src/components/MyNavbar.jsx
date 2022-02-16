@@ -1,21 +1,25 @@
-import { Component } from "react";
+// import { Component } from "react";
 import { Navbar, Nav, InputGroup, FormControl } from "react-bootstrap";
+import { useLocation, Link} from 'react-router-dom'
+import {useState} from 'react'
 
-class MyNavbar extends Component {
-  state = {
-    searchString: "",
-  };
+const MyNavbar=({ShowSearchResult})=> {
+ 
+  const [searchString, setSearching]=useState('')
+  const location=useLocation()
+  // state = {
+  //   searchString: "",
+  // };
 
-  searchStringHandler = (e) => {
+ const searchStringHandler = (e) => {
     if (e.keyCode === 13) {
       // WHEN ENTER KEY IS PRESSED
-      this.props.showSearchResult(this.state.searchString);
+      ShowSearchResult(searchString);
     } else {
-      this.setState({ searchString: e.currentTarget.value });
+      setSearching(e.currentTarget.value );
     }
   };
 
-  render() {
     return (
       <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#221f1f" }}>
         <Navbar.Brand href="/">
@@ -31,9 +35,14 @@ class MyNavbar extends Component {
             <Nav.Link active className="font-weight-bold" href="/">
               Home
             </Nav.Link>
-            <Nav.Link className="font-weight-bold" href="/">
+            <Link to ='/tv-show'>
+              <div className={
+                'nav-link font-weight bold'+
+                (location.pathname==='/tv-show'? 'active' : '')
+              }>
               TV Shows
-            </Nav.Link>
+              </div>
+            </Link>
             <Nav.Link className="font-weight-bold" href="/">
               Movies
             </Nav.Link>
@@ -62,7 +71,6 @@ class MyNavbar extends Component {
         </Navbar.Collapse>
       </Navbar>
     );
-  }
 }
 
 export default MyNavbar;
