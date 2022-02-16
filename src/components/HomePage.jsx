@@ -16,7 +16,7 @@ class HomePage extends Component {
     selectedMovie: null,
   };
 
-  OMDB_URL = "https://www.omdbapi.com/?apikey=24ad60e9";
+  OMDB_URL = "https://www.omdbapi.com/?apikey=a0d093ea";
 
   componentDidMount = () => {
     this.fetchMovies();
